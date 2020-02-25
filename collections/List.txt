@@ -1,0 +1,65 @@
+import java.util.ArrayList;
+import java.util.List;
+
+class ListExample {
+
+	public static void main(String[] args) {
+		List<String> orders = new ArrayList<String>();
+		orders.add("Tortilla");
+		orders.add("Sandwich");
+		orders.add("Fried rice");
+		orders.add("Pasta");
+		orders.add("Burger");
+		orders.add("Pizza");
+		orders.add("Pasta");
+		orders.add("Burger");
+
+		// Check whether orders contain any item
+		if (orders.isEmpty()) {
+			System.out.println("No orders available!!");
+		}
+
+		// Display the number of orders in the list
+		System.out.println("No Of Orders: " + orders.size());
+
+		List<String> newOrders = new ArrayList<String>();
+		newOrders.add("Tortilla");
+		newOrders.add("Cutlet");
+		newOrders.add("Fried Egg");
+
+		// Adding this newOrders list into the existing orders
+
+		orders.addAll(newOrders);
+
+		// Removing "Burger" item from the orders
+
+		orders.remove("Burger");
+		// Removing first item from the orders
+
+		orders.remove(0);
+
+		// Display all orders
+		System.out.println("The items available in the order are: ");
+		System.out.println("========================================");
+		for (String order : orders) {
+			System.out.println(order);
+		}
+		System.out.println("========================================");
+		// Checking whether Pasta is ordered or not
+
+		if (orders.contains("Pasta")) {
+			System.out.println("Pasta is ordered already!!!");
+		} else {
+			System.out.println("No Pasta ordered!!");
+		}
+
+		// Converting list to array
+		Object[] ordersArray = orders.toArray();
+
+		// Deleting all the items from the orders
+		orders.clear();
+
+		System.out.println(orders.isEmpty());
+
+	}
+}
